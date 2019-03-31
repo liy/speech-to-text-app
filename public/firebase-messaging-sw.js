@@ -6,9 +6,9 @@ importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
 
 // Initialize Firebase
 var config = {
-  // You can get the sender id from: https://console.firebase.google.com/u/0/project/ao-speech-to-tex-1553895570081/settings/cloudmessaging/
+  // You can get the sender id from: https://console.firebase.google.com/u/2/project/speech-to-text-236211/settings/cloudmessaging/
   // Used to validate the sender by firebase cloud messaging lib.
-  messagingSenderId: "412805037378"
+  messagingSenderId: "190734931135"
 
   // Also note that, gcm_sender_id is added into the manifest.json file
   // It is completely different from messagingSenderId.

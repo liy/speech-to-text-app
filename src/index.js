@@ -7,12 +7,12 @@ import firebase from "firebase";
 
 // Initialize Firebase for rececing cloud messaging notification
 var config = {
-  apiKey: "AIzaSyDiUbOpgOlkH9Z5q9VYe0ETK5L1dbkcuOc",
-  authDomain: "ao-speech-to-tex-1553895570081.firebaseapp.com",
-  databaseURL: "https://ao-speech-to-tex-1553895570081.firebaseio.com",
-  projectId: "ao-speech-to-tex-1553895570081",
-  storageBucket: "ao-speech-to-tex-1553895570081.appspot.com",
-  messagingSenderId: "412805037378"
+  apiKey: "AIzaSyDINaK58bQmZheEjRbjxwBnpmAuvFnigBM",
+  authDomain: "speech-to-text-236211.firebaseapp.com",
+  databaseURL: "https://speech-to-text-236211.firebaseio.com",
+  projectId: "speech-to-text-236211",
+  storageBucket: "",
+  messagingSenderId: "190734931135"
 };
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
