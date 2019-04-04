@@ -30,6 +30,7 @@ messaging.requestPermission().then(async () => {
   const token = await messaging.getToken();
   console.log('Copy paste the Registration token below to serverside cloud function for testing:')
   console.log(`%c${token}`, `color:orange; background:grey`)
+  ReactDOM.render(<App token={token} />, document.getElementById('root'));
 }).catch(function(err) {
   console.log('Unable to get permission to notify.', err);
 });
@@ -41,7 +42,6 @@ messaging.onMessage(payload => {
 
 
 // All the other react crap
-ReactDOM.render(<App />, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
