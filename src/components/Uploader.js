@@ -31,13 +31,20 @@ class Uploader extends Component {
       }
     };
 
-    const data = {
-      file: btoa(file),
-      token
-    }
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(file);
 
-    console.log(data);
-    return axios.post(url, data, config);
+    reader.onload = () => {
+      const fileContent = reader.result;
+      const data = {
+        file: fileContent,
+        token
+      };
+
+      console.log(data);
+
+      return axios.post(url, data, config);
+    };
 	}
 
   render() {
@@ -45,7 +52,7 @@ class Uploader extends Component {
       <div>
         <form>
           <h2>Upload video</h2>
-          <input type="file" id="file-input" onChange={this.onChange} />
+          <input type="file" onChange={this.onChange} />
           <button className="c-btn" onClick={this.onUpload}>Upload</button>
         </form>
       </div>
