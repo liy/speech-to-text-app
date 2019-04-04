@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const rusha = require('rusha');
+
 class Uploader extends Component {
 	constructor(props) {
 		super(props);
@@ -19,7 +21,8 @@ class Uploader extends Component {
     });
 	}
 
-	onUpload() {
+	onUpload(e) {
+    e.preventDefault();
     const { file } = this.state;
     const { token } = this.props;
 
@@ -27,7 +30,7 @@ class Uploader extends Component {
 
     const config = {
       headers: {
-        'content-type': 'multipart/form-data'
+        'content-type': 'application/json'
       }
     };
 
@@ -35,9 +38,12 @@ class Uploader extends Component {
     reader.readAsArrayBuffer(file);
 
     reader.onload = () => {
-      const fileContent = reader.result;
+      const arrayBuffer = reader.result;
+      const base64Str = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))
+
       const data = {
-        file: fileContent,
+        file: base64Str,
+        guid: rusha.createHash().update(reader.result).digest('hex'),
         token
       };
 
