@@ -5,6 +5,7 @@
   "dependencies": {
     "@ao-internal/css-framework": "^8.3.4-alpha",
     "firebase": "^5.9.2",
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
