@@ -11,7 +11,7 @@ var config = {
   authDomain: "speech-to-text-236211.firebaseapp.com",
   databaseURL: "https://speech-to-text-236211.firebaseio.com",
   projectId: "speech-to-text-236211",
-  storageBucket: "",
+  storageBucket: "speech-to-text-hackday",
   messagingSenderId: "190734931135"
 };
 firebase.initializeApp(config);

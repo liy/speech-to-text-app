@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import './framework.scss';
 import './App.css';
 
 import Uploader from './components/Uploader';
